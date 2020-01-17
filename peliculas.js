@@ -19,7 +19,7 @@ function Card(objeto){
     divG = $("<div class=\'col\'></div>")
     divP = $("<div class=\"card mt-3\" style=\"width: 18rem;\"></div>")
     divP.id = objeto.imdbID
-    divP.append("<img class=\"card-img-top\" src="+ objeto.Poster +" alt=\"Card image cap\">")
+    divP.append("<img class=\"card-img-top\" src="+ objeto.Poster +" alt=\"Card image cap\" style=\"height: 10rem;\">")
     divS = $("<div class=\"card-body\"></div>")
     divS.append("<h5 class=\"card-title\">"+ objeto.Title +"</h5>")
     divS.append("<button class=\"btn btn-outline-success my-2 my-sm-0\" data-toggle=\"modal\" data-target=\"#modal\">Mostrar Contenido</button>")
