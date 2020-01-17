@@ -2,7 +2,7 @@
 function mostrarPeliculas(){
     $("#peliculas").empty()
     $.ajax({
-        url: "http://www.omdbapi.com/?s="+ $("#buscador").val() +"&apikey=113dea2d",
+        url: "https://www.omdbapi.com/?s="+ $("#buscador").val() +"&apikey=113dea2d",
         success: function(respuesta) {
             $.each(respuesta.Search , function( index, value ) {
                 Card(value)
@@ -26,7 +26,7 @@ function Card(objeto){
     divP.append(divS)
     divP.click( () =>{
         $.ajax({
-            url: "http://www.omdbapi.com/?i="+ objeto.imdbID +"&apikey=113dea2d" ,
+            url: "https://www.omdbapi.com/?i="+ objeto.imdbID +"&apikey=113dea2d" ,
             success: function(respuesta){
                 console.log(respuesta)
                 descripcionPelicula(respuesta)
@@ -58,14 +58,8 @@ function descripcionPelicula(objeto){
     divCon = $("<div class=\"container-fluid\"></div>")
     row1 = $("<div class=\"row\"></div>")
     row1.append("<div class=\"col-6\"><img src="+ objeto.Poster +" class=\"img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}\" alt=\"\"></div>")
-    row1.append("<div class=\"col-6\"><p><b>Fecha de Salida:</b> "+ objeto.Released +"</p><b>Director:</b> "+ objeto.Director +"<p><b>Actores:</b> "+ objeto.Actors +"</div>")
+    row1.append("<div class=\"col-6\"><p><b>Fecha de Salida:</b> "+ objeto.Released +"</p><b>Director:</b> "+ objeto.Director +"<p><b>Actores:</b> "+ objeto.Actors +"</p></div>")
     divCon.append(row1)
     body.append(divCon)
     contenidoModal.append(body)
 }                
-
-            
-            // <div class="modal-footer">
-            //     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            //     <button type="button" class="btn btn-primary">Save</button>
-            // </div>
