@@ -17,7 +17,7 @@ function mostrarPeliculas(){
 // Funcion que crea las card donde aparece la imagen de la pelicula y el titulo.
 function Card(objeto){
     divG = $("<div class=\'col\'></div>")
-    divP = $("<div class=\"card mt-3\" style=\"width: 25rem;\"></div>")
+    divP = $("<div class=\"card mt-3\" style=\"width: 22rem;\"></div>")
     divP.id = objeto.imdbID
     divP.append("<img class=\"card-img-top\" src="+ objeto.Poster +" alt=\"Card image cap\" style=\"height: 25rem;\">")
     divS = $("<div class=\"card-body\"></div>")
